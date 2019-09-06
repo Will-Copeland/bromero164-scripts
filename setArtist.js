@@ -34,6 +34,7 @@ fs.readdir(directoryPath, (err, files) => {
         // TRCK: '27',
       };
 
+      // NEW CHANGE
 
       const success = NodeID3.update(tags, file); //  Returns true/false or, if buffer passed as file, the tagged buffer
       NodeID3.update(tags, file, (err, buffer) => {
