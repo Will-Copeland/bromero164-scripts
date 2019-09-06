@@ -20,31 +20,12 @@ fs.readdir(directoryPath, (err, files) => {
     if (file.includes('.mp3')) {
       fileArr.push(file);
     }
-
-    // Do whatever you want to do with the file
-
-    const tags1 = NodeID3.read(file);
-    console.log(tags1);
-
-    // console.log('True', file);
-
     const arr = file.split(' - ');
     if (arr.length > 1) {
       const title = arr[1];
-      const artist = arr[0];
-      console.log(arr);
-      
 
-
-      // const success = NodeID3.update(tags, file);
-      // NodeID3.update(tags, file, (err, buffer) => {
-      //   console.log(err);
-      // });
-      // console.log(success);
-
-      // fs.renameSync(file, `${title}`);
+      fs.renameSync(file, `${title}`);
     }
   });
 
-  console.log(fileArr);
 });
