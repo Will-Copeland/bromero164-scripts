@@ -1,0 +1,22 @@
+{
+  "name": "bromero164-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "setArtist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Will-Copeland/bromero164-scripts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Will-Copeland/bromero164-scripts/issues"
+  },
+  "homepage": "https://github.com/Will-Copeland/bromero164-scripts#readme",
+  "dependencies": {
+    "node-id3": "^0.1.11"
+  }
+}
