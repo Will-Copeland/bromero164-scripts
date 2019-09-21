@@ -59,16 +59,6 @@ function getAllFiles() {
   return fs.readdirSync(directoryPath);
 }
 
-
-fs.readdir(directoryPath, (err, files) => {
-
-
-  // notChanged.push(file);
-
-
-  // console.log(chalk.white(`${notChanged.length} files will not be changed`));
-});
-
 function main() {
   const allFiles = getAllFiles();
   const mp3s = getMp3Files(allFiles);
@@ -83,14 +73,9 @@ function main() {
     if (!file || file === undefined) return;
     const titleStripped = title.slice(0, title.indexOf('.mp3'));
 
-    console.log('Reading: ', file);
-
     const metaData = NodeID3.read(file);
-    console.log('READ: ', metaData.raw);
 
     if (!metaData.title || !!metaData.title.length) {
-      console.log('UPDATING: ');
-
       NodeID3.update({
         title,
       }, file);
@@ -128,10 +113,8 @@ function main() {
         }
         fs.renameSync(file, answers[index]);
       });
+      console.log(chalk.bgWhite('DONE!'));
     });
-
-
-  console.log(chalk.bgWhite('DONE!'));
 }
 
 main();
