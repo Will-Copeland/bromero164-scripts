@@ -41,7 +41,7 @@ function getConflicts(mp3Files) {
         // console.log(titleStripped != metaData.title);
         if (titleStripped !== metaData.title) {
           conflictFiles.push(file);
-          const quest = getQuestion(titleStripped, metaData.title, num);
+          const quest = getQuestion(title, metaData.title, num);
           num++;
           return quest;
         }
@@ -71,7 +71,6 @@ function main() {
     const [artist, title] = file.split(' - ');
     if (artist === undefined || title === undefined) return;
     if (!file || file === undefined) return;
-    const titleStripped = title.slice(0, title.indexOf('.mp3'));
 
     const metaData = NodeID3.read(file);
 
@@ -87,7 +86,7 @@ function main() {
     }
 
 
-    fs.renameSync(file, titleStripped);
+    fs.renameSync(file, title);
   });
 
   inquirer.prompt(questions)
