@@ -24,6 +24,6 @@
   },
   "devDependencies": {},
   "bin": {
-    "bigTest": "setArtist.js"
+    "mp3Rename": "setArtist.js"
   }
 }
